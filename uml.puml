@@ -1,0 +1,187 @@
+@startuml
+annotation java.lang.Override
+annotation java.lang.SuppressWarnings
+class java.awt.BorderLayout
+class java.awt.Color
+class java.awt.event.MouseEvent
+class java.awt.image.ImageObserver
+class java.text.DateFormat
+class java.text.DateFormatSymbols
+class java.text.SimpleDateFormat
+class java.time.LocalDate
+class java.util.ArrayList
+class java.util.Calendar
+class java.util.Date
+class java.util.List
+class java.util.Random
+class javaswingdev.chart.ModelPieChart
+class javaswingdev.chart.PieChart
+class javax.swing.Icon
+class javax.swing.ImageIcon
+class javax.swing.JButton
+class javax.swing.JComponent
+class javax.swing.JFrame
+class javax.swing.JPanel
+class javax.swing.JScrollPane
+class javax.swing.JTextField
+class javax.swing.UIManager
+class javax.swing.plaf.ColorUIResource
+class javax.swing.table.DefaultTableModel
+class javax.swing.table.TableModel
+class org.jfree.chart.ChartFactory
+class org.jfree.chart.ChartPanel
+class org.jfree.chart.JFreeChart
+class org.jfree.chart.plot.CategoryPlot
+class org.jfree.chart.plot.PiePlot
+class org.jfree.chart.plot.PlotOrientation
+class org.jfree.chart.plot.XYPlot
+class org.jfree.chart.renderer.category.BarRenderer
+class org.jfree.chart.renderer.category.LineAndShapeRenderer
+class org.jfree.data.category.DefaultCategoryDataset
+class org.jfree.data.general.DefaultPieDataset
+class org.jfree.data.statistics.HistogramDataset
+class shorna.moneymanagement.component.ScrollBar
+class shorna.moneymanagement.event.EventMenuSelected
+class shorna.moneymanagement.model.CategoryTotalModel
+class shorna.moneymanagement.model.MonthWiseSummary
+class shorna.moneymanagement.model.SummaryModel
+class shorna.moneymanagement.model.TransactionModel
+class shorna.moneymanagement.repository.TransactionRepository
+class shorna.moneymanagement.service.TransactionService
+class shorna.moneymanagement.session.Session
+class shorna.moneymanagement.utils.PopUpMessage
+class shorna.moneymanagement.view.auth.LoginPage
+class shorna.moneymanagement.view.constant.TransactionType
+class shorna.moneymanagement.view.dashboard.DashboardPage
+class shorna.moneymanagement.view.dashboard.form.Analysis
+class shorna.moneymanagement.view.dashboard.form.Expense
+class shorna.moneymanagement.view.dashboard.form.Home
+class shorna.moneymanagement.view.dashboard.form.Income
+class shorna.moneymanagement.view.dashboard.form.TransactionHistory
+class shorna.moneymanagement.view.dashboard.model.Model_Card
+class shorna.moneymanagement.view.dashboard.model.Model_Menu
+enum shorna.moneymanagement.view.dashboard.model.StatusType
+shorna.moneymanagement.view.dashboard.DashboardPage ..> java.lang.Override
+shorna.moneymanagement.view.dashboard.DashboardPage ..> java.lang.SuppressWarnings
+shorna.moneymanagement.view.dashboard.DashboardPage ..> javax.swing.JComponent
+shorna.moneymanagement.view.dashboard.DashboardPage --|> javax.swing.JFrame
+shorna.moneymanagement.view.dashboard.DashboardPage ..> shorna.moneymanagement.event.EventMenuSelected
+shorna.moneymanagement.view.dashboard.DashboardPage ..> shorna.moneymanagement.view.auth.LoginPage
+shorna.moneymanagement.view.dashboard.DashboardPage ..> shorna.moneymanagement.view.dashboard.form.Analysis
+shorna.moneymanagement.view.dashboard.DashboardPage ..> shorna.moneymanagement.view.dashboard.form.Expense
+shorna.moneymanagement.view.dashboard.DashboardPage ..> shorna.moneymanagement.view.dashboard.form.Home
+shorna.moneymanagement.view.dashboard.DashboardPage ..> shorna.moneymanagement.view.dashboard.form.Income
+shorna.moneymanagement.view.dashboard.DashboardPage ..> shorna.moneymanagement.view.dashboard.form.TransactionHistory
+shorna.moneymanagement.view.dashboard.form.Analysis ..> java.lang.SuppressWarnings
+shorna.moneymanagement.view.dashboard.form.Analysis ..> java.awt.BorderLayout
+shorna.moneymanagement.view.dashboard.form.Analysis ..> java.awt.Color
+shorna.moneymanagement.view.dashboard.form.Analysis ..> java.text.DateFormatSymbols
+shorna.moneymanagement.view.dashboard.form.Analysis ..> java.text.SimpleDateFormat
+shorna.moneymanagement.view.dashboard.form.Analysis ..> java.time.LocalDate
+shorna.moneymanagement.view.dashboard.form.Analysis ..> java.util.ArrayList
+shorna.moneymanagement.view.dashboard.form.Analysis ..> java.util.Calendar
+shorna.moneymanagement.view.dashboard.form.Analysis ..> java.util.Date
+shorna.moneymanagement.view.dashboard.form.Analysis ..> java.util.List
+shorna.moneymanagement.view.dashboard.form.Analysis ..> java.util.Random
+shorna.moneymanagement.view.dashboard.form.Analysis ..> javaswingdev.chart.ModelPieChart
+shorna.moneymanagement.view.dashboard.form.Analysis ..> javaswingdev.chart.PieChart
+shorna.moneymanagement.view.dashboard.form.Analysis --|> javax.swing.JPanel
+shorna.moneymanagement.view.dashboard.form.Analysis ..> org.jfree.chart.ChartFactory
+shorna.moneymanagement.view.dashboard.form.Analysis ..> org.jfree.chart.ChartPanel
+shorna.moneymanagement.view.dashboard.form.Analysis ..> org.jfree.chart.JFreeChart
+shorna.moneymanagement.view.dashboard.form.Analysis ..> org.jfree.chart.plot.CategoryPlot
+shorna.moneymanagement.view.dashboard.form.Analysis ..> org.jfree.chart.plot.PiePlot
+shorna.moneymanagement.view.dashboard.form.Analysis ..> org.jfree.chart.plot.PlotOrientation
+shorna.moneymanagement.view.dashboard.form.Analysis ..> org.jfree.chart.plot.XYPlot
+shorna.moneymanagement.view.dashboard.form.Analysis ..> org.jfree.chart.renderer.category.BarRenderer
+shorna.moneymanagement.view.dashboard.form.Analysis ..> org.jfree.chart.renderer.category.LineAndShapeRenderer
+shorna.moneymanagement.view.dashboard.form.Analysis ..> org.jfree.data.category.DefaultCategoryDataset
+shorna.moneymanagement.view.dashboard.form.Analysis ..> org.jfree.data.general.DefaultPieDataset
+shorna.moneymanagement.view.dashboard.form.Analysis ..> org.jfree.data.statistics.HistogramDataset
+shorna.moneymanagement.view.dashboard.form.Analysis ..> shorna.moneymanagement.model.CategoryTotalModel
+shorna.moneymanagement.view.dashboard.form.Analysis ..> shorna.moneymanagement.model.MonthWiseSummary
+shorna.moneymanagement.view.dashboard.form.Analysis ..> shorna.moneymanagement.repository.TransactionRepository
+shorna.moneymanagement.view.dashboard.form.Analysis ..> shorna.moneymanagement.service.TransactionService
+shorna.moneymanagement.view.dashboard.form.Analysis ..> shorna.moneymanagement.session.Session
+shorna.moneymanagement.view.dashboard.form.Expense ..> java.lang.Override
+shorna.moneymanagement.view.dashboard.form.Expense ..> java.lang.SuppressWarnings
+shorna.moneymanagement.view.dashboard.form.Expense ..> java.awt.Color
+shorna.moneymanagement.view.dashboard.form.Expense ..> java.awt.event.MouseEvent
+shorna.moneymanagement.view.dashboard.form.Expense ..> java.awt.image.ImageObserver
+shorna.moneymanagement.view.dashboard.form.Expense ..> java.text.SimpleDateFormat
+shorna.moneymanagement.view.dashboard.form.Expense ..> java.util.ArrayList
+shorna.moneymanagement.view.dashboard.form.Expense ..> java.util.Date
+shorna.moneymanagement.view.dashboard.form.Expense ..> java.util.List
+shorna.moneymanagement.view.dashboard.form.Expense ..> javax.swing.JButton
+shorna.moneymanagement.view.dashboard.form.Expense --|> javax.swing.JPanel
+shorna.moneymanagement.view.dashboard.form.Expense ..> javax.swing.JScrollPane
+shorna.moneymanagement.view.dashboard.form.Expense ..> javax.swing.JTextField
+shorna.moneymanagement.view.dashboard.form.Expense ..> javax.swing.UIManager
+shorna.moneymanagement.view.dashboard.form.Expense ..> javax.swing.plaf.ColorUIResource
+shorna.moneymanagement.view.dashboard.form.Expense ..> javax.swing.table.DefaultTableModel
+shorna.moneymanagement.view.dashboard.form.Expense ..> javax.swing.table.TableModel
+shorna.moneymanagement.view.dashboard.form.Expense ..> shorna.moneymanagement.component.ScrollBar
+shorna.moneymanagement.view.dashboard.form.Expense ..> shorna.moneymanagement.model.TransactionModel
+shorna.moneymanagement.view.dashboard.form.Expense ..> shorna.moneymanagement.repository.TransactionRepository
+shorna.moneymanagement.view.dashboard.form.Expense ..> shorna.moneymanagement.session.Session
+shorna.moneymanagement.view.dashboard.form.Expense ..> shorna.moneymanagement.utils.PopUpMessage
+shorna.moneymanagement.view.dashboard.form.Expense ..> shorna.moneymanagement.view.constant.TransactionType
+shorna.moneymanagement.view.dashboard.form.Expense ..> shorna.moneymanagement.view.dashboard.DashboardPage
+shorna.moneymanagement.view.dashboard.form.Home ..> java.lang.SuppressWarnings
+shorna.moneymanagement.view.dashboard.form.Home ..> java.awt.Color
+shorna.moneymanagement.view.dashboard.form.Home ..> java.awt.event.MouseEvent
+shorna.moneymanagement.view.dashboard.form.Home ..> java.util.List
+shorna.moneymanagement.view.dashboard.form.Home ..> javax.swing.ImageIcon
+shorna.moneymanagement.view.dashboard.form.Home --|> javax.swing.JPanel
+shorna.moneymanagement.view.dashboard.form.Home ..> javax.swing.JScrollPane
+shorna.moneymanagement.view.dashboard.form.Home ..> javax.swing.table.DefaultTableModel
+shorna.moneymanagement.view.dashboard.form.Home ..> javax.swing.table.TableModel
+shorna.moneymanagement.view.dashboard.form.Home ..> shorna.moneymanagement.component.ScrollBar
+shorna.moneymanagement.view.dashboard.form.Home ..> shorna.moneymanagement.model.SummaryModel
+shorna.moneymanagement.view.dashboard.form.Home ..> shorna.moneymanagement.model.TransactionModel
+shorna.moneymanagement.view.dashboard.form.Home ..> shorna.moneymanagement.repository.TransactionRepository
+shorna.moneymanagement.view.dashboard.form.Home ..> shorna.moneymanagement.session.Session
+shorna.moneymanagement.view.dashboard.form.Home ..> shorna.moneymanagement.view.constant.TransactionType
+shorna.moneymanagement.view.dashboard.form.Home ..> shorna.moneymanagement.view.dashboard.model.Model_Card
+shorna.moneymanagement.view.dashboard.form.Income ..> java.lang.Override
+shorna.moneymanagement.view.dashboard.form.Income ..> java.lang.SuppressWarnings
+shorna.moneymanagement.view.dashboard.form.Income ..> java.awt.Color
+shorna.moneymanagement.view.dashboard.form.Income ..> java.awt.event.MouseEvent
+shorna.moneymanagement.view.dashboard.form.Income ..> java.awt.image.ImageObserver
+shorna.moneymanagement.view.dashboard.form.Income ..> java.text.DateFormat
+shorna.moneymanagement.view.dashboard.form.Income ..> java.text.SimpleDateFormat
+shorna.moneymanagement.view.dashboard.form.Income ..> java.util.ArrayList
+shorna.moneymanagement.view.dashboard.form.Income ..> java.util.Date
+shorna.moneymanagement.view.dashboard.form.Income ..> java.util.List
+shorna.moneymanagement.view.dashboard.form.Income --|> javax.swing.JPanel
+shorna.moneymanagement.view.dashboard.form.Income ..> javax.swing.JScrollPane
+shorna.moneymanagement.view.dashboard.form.Income ..> javax.swing.JTextField
+shorna.moneymanagement.view.dashboard.form.Income ..> javax.swing.table.DefaultTableModel
+shorna.moneymanagement.view.dashboard.form.Income ..> javax.swing.table.TableModel
+shorna.moneymanagement.view.dashboard.form.Income ..> shorna.moneymanagement.component.ScrollBar
+shorna.moneymanagement.view.dashboard.form.Income ..> shorna.moneymanagement.model.TransactionModel
+shorna.moneymanagement.view.dashboard.form.Income ..> shorna.moneymanagement.repository.TransactionRepository
+shorna.moneymanagement.view.dashboard.form.Income ..> shorna.moneymanagement.session.Session
+shorna.moneymanagement.view.dashboard.form.Income ..> shorna.moneymanagement.utils.PopUpMessage
+shorna.moneymanagement.view.dashboard.form.Income ..> shorna.moneymanagement.view.constant.TransactionType
+shorna.moneymanagement.view.dashboard.form.Income ..> shorna.moneymanagement.view.dashboard.DashboardPage
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> java.lang.SuppressWarnings
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> java.awt.Color
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> java.awt.event.MouseEvent
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> java.util.List
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> javax.swing.ImageIcon
+shorna.moneymanagement.view.dashboard.form.TransactionHistory --|> javax.swing.JPanel
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> javax.swing.JScrollPane
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> javax.swing.table.DefaultTableModel
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> javax.swing.table.TableModel
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> shorna.moneymanagement.component.ScrollBar
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> shorna.moneymanagement.model.SummaryModel
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> shorna.moneymanagement.model.TransactionModel
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> shorna.moneymanagement.repository.TransactionRepository
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> shorna.moneymanagement.session.Session
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> shorna.moneymanagement.view.constant.TransactionType
+shorna.moneymanagement.view.dashboard.form.TransactionHistory ..> shorna.moneymanagement.view.dashboard.model.Model_Card
+shorna.moneymanagement.view.dashboard.model.Model_Card ..> javax.swing.Icon
+shorna.moneymanagement.view.dashboard.model.Model_Menu ..> javax.swing.Icon
+shorna.moneymanagement.view.dashboard.model.Model_Menu ..> javax.swing.ImageIcon
+@enduml
