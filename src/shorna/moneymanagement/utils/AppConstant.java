@@ -10,11 +10,10 @@ package shorna.moneymanagement.utils;
  * @author Mst. Taslima Aktar Shorna
  */
 public class AppConstant {
-
     public static String database = "money_management";
 
-    public static String tblUser = "user";
-    public static String tblTransaction = "transaction";
+    public static String tblUser = "tbl_user";
+    public static String tblTransaction = "tbl_transaction";
 
     public static String colId = "id";
     public static String colName = "name";
@@ -27,6 +26,7 @@ public class AppConstant {
     public static String colUserId = "user_id";
     public static String colDate = "date";
     public static String colTransactionType = "type";
+    public static String colTransactionCategory = "category";
     public static String colAmount = "amount";
     public static String colNote = "note";
 

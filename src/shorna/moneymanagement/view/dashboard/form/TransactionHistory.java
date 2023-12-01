@@ -16,17 +16,15 @@ import shorna.moneymanagement.repository.TransactionRepository;
 import shorna.moneymanagement.session.Session;
 import shorna.moneymanagement.view.constant.TransactionType;
 
-public class Home extends javax.swing.JPanel {
-    int userId = 0;
-    
-    
+public class TransactionHistory extends javax.swing.JPanel {
 
-    public Home() {
+    int userId = 0;
+
+    public TransactionHistory() {
         initComponents();
         //  add row table
         userId = Session.getUserModel().getId();
-                
-                
+
         System.out.println(Session.isIsLoggedIn());
         spTable.setVerticalScrollBar(new ScrollBar());
         spTable.getVerticalScrollBar().setBackground(Color.WHITE);
@@ -34,9 +32,7 @@ public class Home extends javax.swing.JPanel {
         JPanel p = new JPanel();
         p.setBackground(Color.WHITE);
         spTable.setCorner(JScrollPane.UPPER_RIGHT_CORNER, p);
-        
-        
-    
+
         refreshTableData();
         populateHomeData();
     }
@@ -46,9 +42,6 @@ public class Home extends javax.swing.JPanel {
     private void initComponents() {
 
         panel = new javax.swing.JLayeredPane();
-        card1 = new shorna.moneymanagement.component.Card();
-        card2 = new shorna.moneymanagement.component.Card();
-        card3 = new shorna.moneymanagement.component.Card();
         panelBorder1 = new shorna.moneymanagement.component.PanelBorder();
         jLabel1 = new javax.swing.JLabel();
         spTable = new javax.swing.JScrollPane();
@@ -57,18 +50,6 @@ public class Home extends javax.swing.JPanel {
         setBackground(new java.awt.Color(242, 242, 242));
 
         panel.setLayout(new java.awt.GridLayout(1, 0, 10, 0));
-
-        card1.setColor1(new java.awt.Color(142, 142, 250));
-        card1.setColor2(new java.awt.Color(123, 123, 245));
-        panel.add(card1);
-
-        card2.setColor1(new java.awt.Color(186, 123, 247));
-        card2.setColor2(new java.awt.Color(167, 94, 236));
-        panel.add(card2);
-
-        card3.setColor1(new java.awt.Color(241, 208, 62));
-        card3.setColor2(new java.awt.Color(211, 184, 61));
-        panel.add(card3);
 
         panelBorder1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -115,7 +96,7 @@ public class Home extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(spTable, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                .addComponent(spTable, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
                 .addGap(20, 20, 20))
         );
 
@@ -154,9 +135,9 @@ public class Home extends javax.swing.JPanel {
 
         for (int i = 0; i < trList.size(); i++) {
             TransactionModel tm = trList.get(i);
-            row[0] = String.valueOf(i+1);
+            row[0] = String.valueOf(i + 1);
             row[1] = tm.getDate();
-            TransactionType tt = tm.getTransactionType() == 1 ? TransactionType.income:TransactionType.expense;
+            TransactionType tt = tm.getTransactionType() == 1 ? TransactionType.income : TransactionType.expense;
             row[2] = tt.name();
             row[3] = tm.getCategory();
             row[4] = tm.getNote();
@@ -169,13 +150,10 @@ public class Home extends javax.swing.JPanel {
         table.getColumnModel().getColumn(2).setPreferredWidth(100);
         table.getColumnModel().getColumn(3).setPreferredWidth(100);
         table.getColumnModel().getColumn(4).setPreferredWidth(200);
-           //table.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+        //table.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private shorna.moneymanagement.component.Card card1;
-    private shorna.moneymanagement.component.Card card2;
-    private shorna.moneymanagement.component.Card card3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane panel;
     private shorna.moneymanagement.component.PanelBorder panelBorder1;
@@ -186,15 +164,5 @@ public class Home extends javax.swing.JPanel {
     public void populateHomeData() {
         TransactionRepository transactionRepository = new TransactionRepository();
         SummaryModel sm = transactionRepository.getSummary(userId);
-
-        card1.setData(new Model_Card(new ImageIcon(getClass()
-                .getResource("/shorna/moneymanagement/images/profit.png")), "Income", "৳"+sm.getTotalIncome(), ""));
-        
-        card2.setData(new Model_Card(new ImageIcon(getClass()
-                .getResource("/shorna/moneymanagement/images/stock.png")), "Expense", "৳"+sm.getTotalExpense(), ""));
-        
-        card3.setData(new Model_Card(new ImageIcon(getClass()
-                .getResource("/shorna/moneymanagement/images/flag.png")), "Balance", "৳"+(sm.getTotalIncome() - sm.getTotalExpense()), ""));
-
     }
 }

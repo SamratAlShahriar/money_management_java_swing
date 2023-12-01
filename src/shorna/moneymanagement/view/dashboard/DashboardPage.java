@@ -2,13 +2,12 @@ package shorna.moneymanagement.view.dashboard;
 
 import shorna.moneymanagement.view.dashboard.form.Analysis;
 import shorna.moneymanagement.view.dashboard.form.Income;
-import shorna.moneymanagement.view.dashboard.form.Expense;
 import shorna.moneymanagement.view.dashboard.form.Home;
-import java.awt.Color;
 import javax.swing.JComponent;
 import shorna.moneymanagement.event.EventMenuSelected;
-import shorna.moneymanagement.session.Session;
 import shorna.moneymanagement.view.auth.LoginPage;
+import shorna.moneymanagement.view.dashboard.form.Expense;
+import shorna.moneymanagement.view.dashboard.form.TransactionHistory;
 
 /**
  *
@@ -20,17 +19,32 @@ public class DashboardPage extends javax.swing.JFrame {
      * Creates new form Main
      */
     private Home home;
-    private Income form1;
-    private Expense form2;
-    private Analysis form3;
+    private Income income;
+    private Expense expense;
+    private TransactionHistory history;
+    private Analysis analysis;
+
+    public static DashboardPage instance;
+
+    public void refreshAllData() {
+        home.populateHomeData();
+        home.refreshTableData();
+        income.refreshTableData();
+        expense.refreshTableData();
+        history.refreshTableData();
+        analysis.refreshData();
+    }
 
     public DashboardPage() {
         initComponents();
+        instance = this;
+        //header2.setVisible(false);
         //setBackground(new Color(0, 0, 0, 0));
         home = new Home();
-        form1 = new Income();
-        form2 = new Expense();
-        form3 = new Analysis();
+        income = new Income();
+        expense = new Expense();
+        history = new TransactionHistory();
+        analysis = new Analysis();
         menu.initMoving(DashboardPage.this);
         menu.addEventMenuSelected(new EventMenuSelected() {
             @Override
@@ -40,15 +54,16 @@ public class DashboardPage extends javax.swing.JFrame {
                         setForm(home);
                         break;
                     case 1:
-                        setForm(form1);
+                        setForm(income);
                         break;
                     case 2:
-                        setForm(form2);
+                        setForm(expense);
                         break;
                     case 3:
-                        setForm(form3);
+                        setForm(history);
                         break;
                     case 4:
+                        setForm(analysis);
                         break;
                     case 5:
                         break;
@@ -90,6 +105,7 @@ public class DashboardPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 51, 51));
+        setResizable(false);
 
         panelBorder1.setBackground(new java.awt.Color(242, 242, 242));
 
@@ -169,7 +185,9 @@ public class DashboardPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+
                 new DashboardPage().setVisible(true);
+
             }
         });
     }

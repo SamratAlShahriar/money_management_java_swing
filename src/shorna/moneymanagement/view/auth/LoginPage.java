@@ -186,15 +186,20 @@ public class LoginPage extends javax.swing.JFrame {
                 if (isUserExist) {
                     UserModel result = userRepository.login(email, password);
                     if (result != null) {
-                        Session session = new Session(result);
-                        new DashboardPage().setVisible(true);
-                        this.setVisible(false);
+                        try {
+                            Session session = new Session(result);
+                            new DashboardPage().setVisible(true);
+                            this.setVisible(false);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
                     } else {
                         lblMsg.setText("Email and password didn't match");
                     }
                 } else {
                     lblMsg.setText("No user with this email");
-                    
+
                 }
 
             } else {

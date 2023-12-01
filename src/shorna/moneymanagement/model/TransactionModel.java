@@ -5,30 +5,41 @@
  */
 package shorna.moneymanagement.model;
 
-import java.util.Date;
-
 /**
  *
  * @author Mst. Taslima Aktar Shorna
  */
-public class TransactionModel {
 
-    int id;
-    int userId;
-    int transactionType;
-    String date;
-    double amount;
-    String note;
-    String insertTime;
+
+public class TransactionModel {
+    private int id;
+    private int userId;
+    private int transactionType;
+    private String category;
+    private String date;
+    private double amount;
+    private String note;
+    private String insertTime;
 
     public TransactionModel() {
     }
 
-    public TransactionModel(int id, int userId, int transactionType, String date, double amount, String note, String insertTime) {
+    public TransactionModel(int id, int userId, int transactionType, String category, String date, double amount, String note, String insertTime) {
         this.id = id;
         this.userId = userId;
         this.transactionType = transactionType;
+        this.category = category;
         this.date = date;
+        this.amount = amount;
+        this.note = note;
+        this.insertTime = insertTime;
+    }
+
+    public TransactionModel(int userId, int transactionType, String category, String date, double amount, String note, String insertTime) {
+        this.userId = userId;
+        this.transactionType = transactionType;
+        this.date = date;
+        this.category = category;
         this.amount = amount;
         this.note = note;
         this.insertTime = insertTime;
@@ -89,5 +100,15 @@ public class TransactionModel {
     public void setInsertTime(String insertTime) {
         this.insertTime = insertTime;
     }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+    
+    
 
 }

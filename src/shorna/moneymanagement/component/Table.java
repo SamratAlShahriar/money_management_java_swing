@@ -3,6 +3,8 @@ package shorna.moneymanagement.component;
 import shorna.moneymanagement.view.dashboard.model.StatusType;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseListener;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -31,7 +33,7 @@ public class Table extends JTable {
                         header.setHorizontalAlignment(JLabel.CENTER);
 
                 }
-               
+
                 return header;
             }
         });
@@ -39,15 +41,15 @@ public class Table extends JTable {
             @Override
             public Component getTableCellRendererComponent(JTable jtable, Object o, boolean selected, boolean bln1, int i, int i1) {
                 //if (i1 != 4) {
-                    Component com = super.getTableCellRendererComponent(jtable, o, selected, bln1, i, i1);
-                    com.setBackground(Color.WHITE);
-                    setBorder(noFocusBorder);
-                    if (selected) {
-                        com.setForeground(new Color(15, 89, 140));
-                    } else {
-                        com.setForeground(new Color(102, 102, 102));
-                    }
-                    return com;
+                Component com = super.getTableCellRendererComponent(jtable, o, selected, bln1, i, i1);
+                com.setBackground(Color.WHITE);
+                setBorder(noFocusBorder);
+                if (selected) {
+                    com.setForeground(new Color(15, 89, 140));
+                } else {
+                    com.setForeground(new Color(102, 102, 102));
+                }
+                return com;
                 //} 
 //                else {
 //                    StatusType type = (StatusType) o;
@@ -56,7 +58,19 @@ public class Table extends JTable {
 //                }
             }
         });
+        
+       
+
     }
+
+    @Override
+    public synchronized void addMouseListener(MouseListener l) {
+        super.addMouseListener(l); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    
+    
 
     public void addRow(Object[] row) {
         DefaultTableModel model = (DefaultTableModel) getModel();

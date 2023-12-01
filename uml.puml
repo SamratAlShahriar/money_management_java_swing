@@ -1,0 +1,26 @@
+@startuml
+annotation java.lang.SuppressWarnings
+class java.text.SimpleDateFormat
+class java.util.Date
+class javax.swing.JFrame
+class shorna.moneymanagement.model.UserModel
+class shorna.moneymanagement.repository.UserRepository
+class shorna.moneymanagement.session.Session
+class shorna.moneymanagement.utils.PopUpMessage
+class shorna.moneymanagement.view.auth.LoginPage
+class shorna.moneymanagement.view.auth.SignupPage
+class shorna.moneymanagement.view.dashboard.DashboardPage
+shorna.moneymanagement.view.auth.LoginPage ..> java.lang.SuppressWarnings
+shorna.moneymanagement.view.auth.LoginPage --|> javax.swing.JFrame
+shorna.moneymanagement.view.auth.LoginPage ..> shorna.moneymanagement.model.UserModel
+shorna.moneymanagement.view.auth.LoginPage ..> shorna.moneymanagement.repository.UserRepository
+shorna.moneymanagement.view.auth.LoginPage ..> shorna.moneymanagement.session.Session
+shorna.moneymanagement.view.auth.LoginPage ..> shorna.moneymanagement.view.dashboard.DashboardPage
+shorna.moneymanagement.view.auth.SignupPage ..> java.lang.SuppressWarnings
+shorna.moneymanagement.view.auth.SignupPage ..> java.text.SimpleDateFormat
+shorna.moneymanagement.view.auth.SignupPage ..> java.util.Date
+shorna.moneymanagement.view.auth.SignupPage --|> javax.swing.JFrame
+shorna.moneymanagement.view.auth.SignupPage ..> shorna.moneymanagement.model.UserModel
+shorna.moneymanagement.view.auth.SignupPage ..> shorna.moneymanagement.repository.UserRepository
+shorna.moneymanagement.view.auth.SignupPage ..> shorna.moneymanagement.utils.PopUpMessage
+@enduml
